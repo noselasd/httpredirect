@@ -47,7 +47,7 @@ func serveHTTP(port string) {
 	go accessLogger(accessLogChan)
 
 	reHandler := simplemux.NewRegexpHandler()
-	reHandler.AddRoute("^/", "GET", redirect)
+	reHandler.AddRoute("^/", "", redirect)
 	http.Handle("/", reHandler)
 
 	var scheme string
